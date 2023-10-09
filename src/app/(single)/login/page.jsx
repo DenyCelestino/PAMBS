@@ -50,7 +50,7 @@ export default function Login() {
               type="password"
               value={password}
               className="bg-transparent p-2 w-full"
-              placeholder="digite sua senha"
+              placeholder="digite sua senha pambs"
             />
           </div>
           <Link
