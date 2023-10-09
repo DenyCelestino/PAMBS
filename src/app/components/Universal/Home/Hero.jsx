@@ -1,5 +1,6 @@
+'use client'
 import { MoveDownRight, Send, Wallet } from 'lucide-react'
-
+import { motion } from 'framer-motion'
 const data = [
   {
     name: 'Saldo disponivel',
@@ -23,7 +24,17 @@ export default function Hero() {
     <div className="bg-primary-100 w-full h-52 md:h-72 flex items-center justify-center rounded-b-lg text-zinc-50  ">
       <div className="wrapper flex flex-col relative ">
         <div className="flex flex-col md:flex-row gap-2 md:0 md:justify-between">
-          <div>
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -100
+            }}
+            animate={{
+              opacity: 1,
+              x: 0
+            }}
+            transition={{ duration: 0.6 }}
+          >
             <h1 className="font-bold text-base md:text-lg">
               Bem vindo, Delfim Celestino
             </h1>
@@ -31,7 +42,7 @@ export default function Hero() {
               Lorem ipsum, dolor sit amet consectetur adipisicing
               elit.!
             </span>
-          </div>
+          </motion.div>
           <div>
             <button className="py-2 px-4 bg-secondary-100 rounded text-xs md:text-base">
               Baixar relatiorio
@@ -42,7 +53,16 @@ export default function Hero() {
         {/* list box  */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 absolute left-0 bottom-0 -mb-40 md:-mb-36 text-xs md:text-base">
           {data.map((item, index) => (
-            <div
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: -100
+              }}
+              animate={{
+                opacity: 1,
+                x: 0
+              }}
+              transition={{ duration: index * 0.8 }}
               key={index}
               className="bg-white  p-2 flex items-center gap-4 shadow-md rounded text-zinc-950 "
             >
@@ -54,7 +74,7 @@ export default function Hero() {
                 <span>{item.name}</span>
                 <span className="font-bold">{item.amount} MT</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
