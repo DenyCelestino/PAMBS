@@ -1,9 +1,14 @@
+'use client'
+
 import Image from 'next/image'
 import MASCOTE from '../../../../public/mascot.png'
 import { Key, User2 } from 'lucide-react'
 import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Login() {
+  const [code, setCode] = useState('002445')
+  const [password, setPassword] = useState('002445')
   return (
     <div className="flex flex-col md:flex-row">
       <div className="min-h-2/5 md:min-h-screen w-full md:w-2/4 bg-primary-100 text-xs md:text-base text-center text-zinc-50">
@@ -36,12 +41,14 @@ export default function Login() {
             <input
               className="bg-transparent p-2 w-full"
               placeholder="digite seu codigo pambs"
+              value={code}
             />
           </div>
           <div className="w-full flex items-center gap-1 bg-zinc-300 p-2 rounded">
             <Key size={15} />
             <input
               type="password"
+              value={password}
               className="bg-transparent p-2 w-full"
               placeholder="digite sua senha"
             />
